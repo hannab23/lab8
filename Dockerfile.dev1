@@ -1,0 +1,7 @@
+FROM node:alpine
+WORKDIR '/app'
+ENV NODE_OPRIONS=--openssl-legacy-provider
+COPY package.json .
+RUN npm install
+RUN chown -R node.node
+CMD ["npm", "run", "start"]
